@@ -14,7 +14,7 @@ initrng(seed);
 
 % LOAD GENOTYPE AND PHENOTYPE DATA.
 fprintf('Loading genotype and phenotype data.\n');
-load('/tmp/pcarbo/t1d.mat');
+load('t1d.mat');
 
 % Sets of SNPs corresponding to the MHC region (mhcsnps), and the entire
 % genome except for the MHC (othersnps).
@@ -27,11 +27,11 @@ othersnps = find(~isinmhc);
 % the SNP data from the WTCCC case-control disease studies are based on this
 % assembly.
 fprintf('Loading gene data.\n');
-load('/tmp/pcarbo/gene_35.1.mat');
+load('gene_35.1.mat');
 
 % LOAD PATHWAY DATA.
 fprintf('Loading pathway data.\n');
-load('/tmp/pcarbo/pathway.mat');
+load('pathway.mat');
 
 % ASSIGN SNPS TO GENES, THEN GENES TO PATHWAYS.
 fprintf('Assigning SNPs to genes and pathways.\n');
@@ -77,7 +77,7 @@ switch stage
   
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-A.mat','seed','sd','theta0','logw',...
+  save('pathway-t1d-A.mat','seed','sd','theta0','logw',...
        'alpha','mu','s','eta','-v7.3');
 
  case 'B'
@@ -91,7 +91,7 @@ switch stage
 
   % Import the estimates of the variational parameters "eta" from Stage A
   % of the analysis.
-  a   = load('/tmp/pcarbo/pathway-t1d-A.mat');
+  a   = load('pathway-t1d-A.mat');
   eta = a.eta;
 
   % RUN JOINT ANALYSIS OF SNPs WITHOUT PATHWAYS.
@@ -116,7 +116,7 @@ switch stage
   
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-B.mat','seed','sd','theta0',...
+  save('pathway-t1d-B.mat','seed','sd','theta0',...
        'mhcsnps','othersnps','logw','alpha','mu','s','eta',...
        '-v7.3');
 
@@ -140,7 +140,7 @@ switch stage
   % obtained from Stage A. Specifically, I initialize the variational
   % parameters to the setting of the genome-wide log-odds with the largest
   % importance weight.
-  a       = load('/tmp/pcarbo/pathway-t1d-A.mat');
+  a       = load('pathway-t1d-A.mat');
   [ans i] = max(a.logw);
   alpha0  = a.alpha(:,i);
   mu0     = a.mu(:,i);
@@ -163,7 +163,7 @@ switch stage
   
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-C.mat','seed','sd','theta0','logw',...
+  save('pathway-t1d-C.mat','seed','sd','theta0','logw',...
        'alpha','mu','s','eta','-v7.3');
 
  case 'D'
@@ -177,7 +177,7 @@ switch stage
 
   % Import the estimates of the variational parameters "eta" from Stage C
   % of the analysis.
-  a   = load('/tmp/pcarbo/pathway-t1d-C.mat');
+  a   = load('pathway-t1d-C.mat');
   eta = a.eta;
 
   % RUN JOINT ANALYSIS OF SNPs WITHOUT PATHWAYS.
@@ -202,7 +202,7 @@ switch stage
   
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-D.mat','seed','sd','theta0',...
+  save('pathway-t1d-D.mat','seed','sd','theta0',...
        'mhcsnps','othersnps','logw','alpha','mu','s','eta',...
        '-v7.3');
 
@@ -224,7 +224,7 @@ switch stage
   H = getinitpaths(gene,pathway);
 
   % Load the posterior statistics under the null hypothesis (Stage B).
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-B.mat',theta0);
+  null = getnullstats('pathway-t1d-B.mat',theta0);
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   [m n] = size(H);
@@ -244,7 +244,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-E.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-E.mat','seed','sd','da','A','H',...
        'theta0','theta','BF','logw1','-v7.3');
 
  case 'F'
@@ -262,7 +262,7 @@ switch stage
   H     = genhmatrix(num2cell(paths),length(pathway.label));
 
   % Load the posterior statistics under the null hypothesis (Stage B).
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-B.mat',theta0);
+  null = getnullstats('pathway-t1d-B.mat',theta0);
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % Note that there is no need to adopt the modified analysis here (as
@@ -286,7 +286,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-F.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-F.mat','seed','sd','da','A','H',...
        'theta0','theta','BF','logw1','-v7.3');
 
  case 'G'
@@ -305,7 +305,7 @@ switch stage
   H     = genhmatrix(num2cell(paths),length(pathway.label));
 
   % Load the posterior statistics under the null hypothesis (Stage D).
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
+  null = getnullstats('pathway-t1d-D.mat',theta0);
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % Note that there is no need to adopt the modified analysis here (as
@@ -330,7 +330,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-G.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-G.mat','seed','sd','da','A','H',...
        'theta0','theta','BF','logw1','alpha','mu','s','-v7.3');
 
  case 'H'
@@ -350,8 +350,8 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Remove SNPs in the MHC region from THE pathway annotations.
@@ -385,7 +385,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-H.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-H.mat','seed','sd','da','A','H',...
        'theta0','theta','thetaMHC','BF','logw1','-v7.3');
 
  case 'I'
@@ -413,14 +413,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -446,7 +446,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-I.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-I.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','-v7.3');
 
@@ -468,14 +468,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -501,7 +501,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-J.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-J.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','-v7.3');
 
@@ -557,14 +557,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -590,7 +590,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-K.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-K.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','-v7.3');
 
@@ -620,14 +620,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -654,7 +654,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-L.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-L.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','alpha','mu','s','-v7.3');
 
@@ -717,14 +717,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -750,7 +750,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-M.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-M.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','-v7.3');
 
@@ -776,14 +776,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -809,7 +809,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-N.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-N.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','-v7.3');
 
@@ -831,14 +831,14 @@ switch stage
   % enriched for disease risk factors. These posterior statistics are
   % obtained by combining the posterior statistics computed in Stages D and
   % G of the analysis.
-  null = getnullstats('/tmp/pcarbo/pathway-t1d-D.mat',theta0);
-  mhcnull = load('/tmp/pcarbo/pathway-t1d-G.mat');
+  null = getnullstats('pathway-t1d-D.mat',theta0);
+  mhcnull = load('pathway-t1d-G.mat');
   [logw0 alpha0 mu0 s0] = getpathwaynull(null,mhcnull,theta0,thetaMHC,1);
 
   % Load the genotype data from all SNPs except SNPs with the "extended"
   % MHC region.
   clear X
-  load('/tmp/pcarbo/t1dnomhc.mat');
+  load('t1dnomhc.mat');
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   % I remove SNPs in the "extended" MHC region from the analysis. This can be
@@ -865,7 +865,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t1d-O.mat','seed','sd','da','A','H',...
+  save('pathway-t1d-O.mat','seed','sd','da','A','H',...
        'mhcsnps','othersnps','theta0','theta','thetaMHC','BF',...
        'logw1','alpha','mu','s','-v7.3');
 end

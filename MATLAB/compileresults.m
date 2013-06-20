@@ -6,8 +6,8 @@ clear
 part = 'A';
 
 % Directories where the data and results are stored.
-datadir    = '/tmp/pcarbo';
-resultsdir = '/tmp/pcarbo/results';
+datadir    = 'data';
+resultsdir = 'results';
 
 % Distance for assigning SNPs to genes (da), and maximum number of SNP-gene
 % annotations.

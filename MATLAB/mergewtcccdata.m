@@ -18,22 +18,22 @@
 % First merge the two control cohorts.
 clear
 fprintf('Merging controls.\n');
-a  = load('/tmp/pcarbo/wtccc_58bc.mat');
-b  = load('/tmp/pcarbo/wtccc_ukbs.mat');
+a  = load('wtccc_58bc.mat');
+b  = load('wtccc_ukbs.mat');
 na = size(a.X,1);
 nb = size(b.X,1);
 [X y labels chr pos minor major] = ...
     mergedata(a.X,zeros(na,1),a.labels,a.chr,a.pos,a.minor,a.major,...
 	      b.X,zeros(nb,1),b.labels,b.chr,b.pos,b.minor,b.major);
-save('/tmp/pcarbo/wtccc_controls.mat',...
+save('wtccc_controls.mat',...
      'X','labels','chr','pos','minor','major','-v7.3');
 
 % BIPOLAR DISORDER.
 % I do not filter out any SNPs from the bipolar disorder data set.
 clear
 fprintf('Creating bipolar disorder data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_bd.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_bd.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -43,7 +43,7 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/bd.mat','X','y','labels','chr','pos',...
+save('bd.mat','X','y','labels','chr','pos',...
      'minor','major','-v7.3');
 
 % CORONARY ARTERY DISEASE.  
@@ -53,8 +53,8 @@ save('/tmp/pcarbo/bd.mat','X','y','labels','chr','pos',...
 % than 11.
 clear
 fprintf('Creating coronary artery disease data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_cad.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_cad.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -65,7 +65,7 @@ numctrls = size(ctrls.X,1);
 badsnp = 6553488;
 snps   = [ find(labels == badsnp) find(sum(X) < 1) ];
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/cad.mat','X','y','labels','chr','pos',...
+save('cad.mat','X','y','labels','chr','pos',...
      'minor','major','-v7.3');
 
 % CROHN'S DISEASE.
@@ -76,8 +76,8 @@ save('/tmp/pcarbo/cad.mat','X','y','labels','chr','pos',...
 % greater than 46.
 clear
 fprintf('Creating Crohn''s disease data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_cd.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_cd.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -89,15 +89,15 @@ badsnps    = [ 1914328 6601764 ];
 [ans snps] = intersect(labels,badsnps);
 snps       = [ snps find(sum(X) < 1) ];
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/cd.mat','X','y','labels','chr','pos',...
+save('cd.mat','X','y','labels','chr','pos',...
      'minor','major','-v7.3');
 
 % HYPERTENSION.
 % I do not filter out any SNPs from the hypertension data set.
 clear
 fprintf('Creating hypertension data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_ht.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_ht.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -107,15 +107,15 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/ht.mat','X','y','labels','chr','pos',...
+save('ht.mat','X','y','labels','chr','pos',...
      'minor','major','-v7.3');
 
 % RHEUMATOID ARTHRITIS
 % I do not filter out any SNPs from the rheumatoid arthritis data set.
 clear
 fprintf('Creating rheumatoid arthritis data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_ra.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_ra.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -125,15 +125,15 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/ra.mat','X','y','labels','chr','pos',...
+save('ra.mat','X','y','labels','chr','pos',...
      'minor','major','-v7.3');
 
 % TYPE 1 DIABETES.
 % I do not filter out any SNPs from the type 1 diabetes data set.
 clear
 fprintf('Creating type 1 diabetes data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_t1d.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_t1d.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -143,15 +143,15 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/t1d.mat','X','y','labels','chr','pos',...
+save('t1d.mat','X','y','labels','chr','pos',...
      'minor','major','-v7.3');
 
 % TYPE 2 DIABETES.
 % I do not filter out any SNPs from the type 2 diabetes data set.
 clear
 fprintf('Creating type 2 diabetes data set.\n');
-cases    = load('/tmp/pcarbo/wtccc_t2d.mat');
-ctrls    = load('/tmp/pcarbo/wtccc_controls.mat');
+cases    = load('wtccc_t2d.mat');
+ctrls    = load('wtccc_controls.mat');
 numcases = size(cases.X,1);
 numctrls = size(ctrls.X,1);
 [X y labels chr pos minor major] = ...
@@ -161,5 +161,4 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('/tmp/pcarbo/t2d.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('t2d.mat','X','y','labels','chr','pos','minor','major','-v7.3');

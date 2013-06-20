@@ -10,9 +10,9 @@ clear
 n = 1480;    % Number of subjects.
 p = 459446;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/birthctrl/birthctrl.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/birthctrl/birthctrl.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_58bc.mat';
+posfiles = 'wtccc/birthctrl/birthctrl.wtccc.chr%d.pos';
+genfiles = 'wtccc/birthctrl/birthctrl.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_58bc.mat';
 
 fprintf('1958 birth controls\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -25,9 +25,9 @@ clear
 n = 1458;    % Number of subjects.
 p = 459446;  % Number of SNPs.
   
-posfiles = '/tmp/pcarbo/wtccc/bloodctrl/bloodctrl.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/bloodctrl/bloodctrl.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_ukbs.mat';
+posfiles = 'wtccc/bloodctrl/bloodctrl.wtccc.chr%d.pos';
+genfiles = 'wtccc/bloodctrl/bloodctrl.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_ukbs.mat';
 
 fprintf('UK blood services controls\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -40,9 +40,9 @@ clear
 n = 1868;    % Number of subjects.
 p = 458868;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/bd/bd.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/bd/bd.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_bd.mat';
+posfiles = 'wtccc/bd/bd.wtccc.chr%d.pos';
+genfiles = 'wtccc/bd/bd.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_bd.mat';
 
 fprintf('Bipolar disorder cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -55,9 +55,9 @@ clear
 n = 1926;    % Number of subjects.
 p = 458868;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/cad/cad.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/cad/cad.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_cad.mat';
+posfiles = 'wtccc/cad/cad.wtccc.chr%d.pos';
+genfiles = 'wtccc/cad/cad.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_cad.mat';
 
 fprintf('Coronary artery disease cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -70,9 +70,9 @@ clear
 n = 1748;    % Number of subjects.
 p = 458868;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/cd/cd.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/cd/cd.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_cd.mat';
+posfiles = 'wtccc/cd/cd.wtccc.chr%d.pos';
+genfiles = 'wtccc/cd/cd.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_cd.mat';
 
 fprintf('Crohn''s disease cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -85,9 +85,9 @@ clear
 n = 1952;    % Number of subjects.
 p = 458868;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/ht/ht.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/ht/ht.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_ht.mat';
+posfiles = 'wtccc/ht/ht.wtccc.chr%d.pos';
+genfiles = 'wtccc/ht/ht.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_ht.mat';
 
 fprintf('Hypertension cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -100,9 +100,9 @@ clear
 n = 1860;    % Number of subjects.
 p = 458868;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/ra/ra.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/ra/ra.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_ra.mat';
+posfiles = 'wtccc/ra/ra.wtccc.chr%d.pos';
+genfiles = 'wtccc/ra/ra.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_ra.mat';
 
 fprintf('Rheumatoid arthritis cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -115,9 +115,9 @@ clear
 n = 1963;    % Number of subjects.
 p = 458868;  % Number of SNPs.
   
-posfiles = '/tmp/pcarbo/wtccc/t1d/t1d.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/t1d/t1d.chr%d.mean.genotype.txt'; 
-matfile  = '/tmp/pcarbo/wtccc_t1d.mat';
+posfiles = 'wtccc/t1d/t1d.wtccc.chr%d.pos';
+genfiles = 'wtccc/t1d/t1d.chr%d.mean.genotype.txt'; 
+matfile  = 'wtccc_t1d.mat';
 
 fprintf('Type 1 diabetes cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);
@@ -130,9 +130,9 @@ clear
 n = 1924;    % Number of subjects.
 p = 458868;  % Number of SNPs.
 
-posfiles = '/tmp/pcarbo/wtccc/t2d/t2d.wtccc.chr%d.pos';
-genfiles = '/tmp/pcarbo/wtccc/t2d/t2d.chr%d.mean.genotype.txt';
-matfile  = '/tmp/pcarbo/wtccc_t2d.mat';
+posfiles = 'wtccc/t2d/t2d.wtccc.chr%d.pos';
+genfiles = 'wtccc/t2d/t2d.chr%d.mean.genotype.txt';
+matfile  = 'wtccc_t2d.mat';
 
 fprintf('Type 2 diabetes cases\n');
 [X labels chr pos minor major] = readbimbam(n,p,genfiles,posfiles);

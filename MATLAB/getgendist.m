@@ -4,11 +4,11 @@
 clear
 
 % Load the SNP data.
-load('/tmp/pcarbo/cd.mat');
+load('cd.mat');
 p = length(labels);
 
 % Load the genetic distances for the HapMap genetic markers.
-load('/tmp/pcarbo/hapmap.mat');
+load('hapmap.mat');
 hapmap.chr  = [ hapmap.chr;  0   ];
 hapmap.pos  = [ hapmap.pos;  Inf ];
 hapmap.dist = [ hapmap.dist; 0   ];
@@ -60,4 +60,4 @@ for c = 1:22
 end
 
 % Save the genetic distances.
-save('/tmp/pcarbo/cdgendist.mat','dist','-v7.3');
+save('cdgendist.mat','dist','-v7.3');

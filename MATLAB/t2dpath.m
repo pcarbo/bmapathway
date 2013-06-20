@@ -14,18 +14,18 @@ initrng(seed);
 
 % LOAD GENOTYPE AND PHENOTYPE DATA.
 fprintf('Loading genotype and phenotype data.\n');
-load('/tmp/pcarbo/t2d.mat');
+load('t2d.mat');
 
 % LOAD GENE DATA.
 % Load the gene data for human genome assembly 17 (NCBI Build 35) because
 % the SNP data from the WTCCC case-control disease studies are based on this
 % assembly.
 fprintf('Loading gene data.\n');
-load('/tmp/pcarbo/gene_35.1.mat');
+load('gene_35.1.mat');
 
 % LOAD PATHWAY DATA.
 fprintf('Loading pathway data.\n');
-load('/tmp/pcarbo/pathway.mat');
+load('pathway.mat');
 
 % ASSIGN SNPS TO GENES, THEN GENES TO PATHWAYS.
 fprintf('Assigning SNPs to genes and pathways.\n');
@@ -71,7 +71,7 @@ switch stage
   
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t2d-A.mat','seed','sd','theta0','logw',...
+  save('pathway-t2d-A.mat','seed','sd','theta0','logw',...
        'alpha','mu','s','eta','-v7.3');
 
  case 'B'
@@ -94,7 +94,7 @@ switch stage
   % obtained from Stage A. Specifically, I initialize the variational
   % parameters to the setting of the genome-wide log-odds with the largest
   % importance weight.
-  a       = load('/tmp/pcarbo/pathway-t2d-A.mat');
+  a       = load('pathway-t2d-A.mat');
   [ans i] = max(a.logw);
   alpha0  = a.alpha(:,i);
   mu0     = a.mu(:,i);
@@ -117,7 +117,7 @@ switch stage
   
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t2d-B.mat','seed','sd','theta0',...
+  save('pathway-t2d-B.mat','seed','sd','theta0',...
        'logw','alpha','mu','s','eta','-v7.3');
 
  case 'C'
@@ -137,7 +137,7 @@ switch stage
   H = getinitpaths(gene,pathway);
 
   % Load the posterior statistics under the null hypothesis (Stage A).
-  null = getnullstats('/tmp/pcarbo/pathway-t2d-A.mat',theta0);
+  null = getnullstats('pathway-t2d-A.mat',theta0);
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   [m n] = size(H);
@@ -156,7 +156,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t2d-C.mat','seed','sd','da','A','H',...
+  save('pathway-t2d-C.mat','seed','sd','da','A','H',...
        'theta0','theta','BF','logw1','-v7.3');
 
  case 'D'
@@ -176,7 +176,7 @@ switch stage
   H     = genhmatrix(num2cell(paths),length(pathway.label));
 
   % Load the posterior statistics under the null hypothesis (Stage B).
-  null = getnullstats('/tmp/pcarbo/pathway-t2d-B.mat',theta0);
+  null = getnullstats('pathway-t2d-B.mat',theta0);
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   [m n] = size(H);
@@ -195,7 +195,7 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t2d-D.mat','seed','sd','da','A','H',...
+  save('pathway-t2d-D.mat','seed','sd','da','A','H',...
        'theta0','theta','BF','logw1','-v7.3');
 
  case 'E'
@@ -211,7 +211,7 @@ switch stage
   H = genhmatrix(num2cell([ 705 706 2141 2288 2289 ]),length(pathway.label));
 
   % Load the posterior statistics under the null hypothesis (Stage B).
-  null = getnullstats('/tmp/pcarbo/pathway-t2d-B.mat',theta0);
+  null = getnullstats('pathway-t2d-B.mat',theta0);
 
   % COMPUTE BAYES FACTORS FOR ENRICHMENT OF GENE SETS.
   [m n] = size(H);
@@ -231,6 +231,6 @@ switch stage
 
   % SAVE RESULTS.
   fprintf('Saving results.\n');
-  save('/tmp/pcarbo/pathway-t2d-E.mat','seed','sd','da','A','H',...
+  save('pathway-t2d-E.mat','seed','sd','da','A','H',...
        'theta0','theta','BF','logw1','alpha','mu','s','-v7.3');
 end

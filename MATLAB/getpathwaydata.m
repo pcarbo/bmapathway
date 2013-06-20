@@ -10,15 +10,15 @@ numpanther  = 140;
 numbiosys   = 2235;
 
 % The locations of the pathway database files.
-pcfile         = '/tmp/pcarbo/homo-sapiens-9606-entrez-gene-id.gmt';
-biocartafile   = '/tmp/pcarbo/biocarta.gmt';
-pantherfile    = '/tmp/pcarbo/SequenceAssociationPathway3.01.txt';
-biosyspathfile = '/tmp/pcarbo/biosystems.txt';
-biosysgenefile = '/tmp/pcarbo/biosystems_gene';
+pcfile         = 'homo-sapiens-9606-entrez-gene-id.gmt';
+biocartafile   = 'biocarta.gmt';
+pantherfile    = 'SequenceAssociationPathway3.01.txt';
+biosyspathfile = 'biosystems.txt';
+biosysgenefile = 'biosystems_gene';
 
 % Load gene data.
 fprintf('Loading gene ID, symbol and Ensembl accession maps.\n');
-load('/tmp/pcarbo/genemap.mat');
+load('genemap.mat');
 
 % Get the number of genes.
 n = numvalues(ids);
@@ -54,8 +54,8 @@ biosys = getbiosysdata(biosyspathfile,biosysgenefile,ids,n,numbiosys);
 % I define the gene sets for the MHC and xMHC to be the 124 and 251 gene
 % loci, respectively, that are expressed within the MHC and xMHC regions.
 %
-mhcgenes  = cellfun(@(x) symbols(x),importdata('/tmp/pcarbo/mhc_gene'));
-xmhcgenes = cellfun(@(x) symbols(x),importdata('/tmp/pcarbo/xmhc_gene'));
+mhcgenes  = cellfun(@(x) symbols(x),importdata('mhc_gene'));
+xmhcgenes = cellfun(@(x) symbols(x),importdata('xmhc_gene'));
 mhc.label = { 'Major histocompatibility complex'
                  'Extended major histocompatibility complex' };
 mhc.genes = sparse(n,2);
@@ -107,7 +107,7 @@ for i = 1:m
 end
 
 fprintf('Saving ungrouped pathway data.\n');
-save('/tmp/pcarbo/pathwayungrouped.mat','pathway','-v7.3');
+save('pathwayungrouped.mat','pathway','-v7.3');
 
 % Group pathways into identical gene sets.
 keep             = zeros(m,1);
@@ -146,4 +146,4 @@ pathway.synonyms = pathway.synonyms(I);
 pathway.genes    = pathway.genes(:,I);
 
 fprintf('Saving pathway data.\n');
-save('/tmp/pcarbo/pathway.mat','pathway','-v7.3');
+save('pathway.mat','pathway','-v7.3');
