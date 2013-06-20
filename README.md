@@ -1,9 +1,17 @@
 bmapathway
 ==========
 
-MATLAB and R code for jointly analyzing enriched gene sets (biological
-pathways) and associated variants (SNPs) from genome-wide data using
-Bayesian model averaging over multi-marker (polygenic) models of
-disease.
+This repository contains full MATLAB source code and scripts
+implementing integrated analysis of genetic variants and pathways in
+genome-wide association studies of seven common diseases: bipolar
+disorder, coronary artery disease, Crohn's disease, hypertension,
+rheumatoid arthritis, type 1 diabetes and type 2 diabetes. This MATLAB
+code includes statistical procedures to (1) interrogate pathways for
+enrichment of disease associations in genome-wide data, and (2) to
+prioritize variants assigned to enriched pathways in an attempt to
+enhance discovery of genes underlying complex diseases. Our
+procedures are based on fitting multi-marker models of disease to the
+data, and using Bayesian model averaging to quantify support for
+enriched pathways and infer disease associations across the genome.
 
-*Full source code for this project will come soon.*
+*R implementations of these statistical procedures are forthcoming.*
