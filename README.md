@@ -16,3 +16,22 @@ averaging (BMA) to quantify support for enriched pathways, and to
 infer disease associations across the genome.
 
 *R implementations of these statistical procedures are forthcoming.*
+
+###License
+
+Copyright (c) 2013, Peter Carbonetto.
+
+The bmapathway project repostiory by
+[Peter Carbonetto](http://github.com/pcarbo) is free software: you can
+redistribute it and/or modify it under the terms of the
+[GNU General Public License](http://www.gnu.org/licenses/gpl.html)
+as published by the Free Software Foundation, either
+version 3 of the License, or (at your option) any later version.
+
+
+
+The bmapathway project repository is distributed in the hope that it
+will be useful, but **without any warranty**; without even the implied
+warranty of **merchantability** or **fitness for a particular
+purpose**. See [LICENSE](LICENSE) for more details.
+
