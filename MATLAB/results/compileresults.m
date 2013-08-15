@@ -174,7 +174,7 @@ switch part
     ctrls = find(y == 0);
 
     % Create overlapping segments with 50 SNPs.
-    [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+    [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
     [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
     % Load the results from the analysis.
@@ -251,7 +251,7 @@ switch part
 
     % Create overlapping segments with 50 SNPs.
     fprintf('Partitioning the genome into segments.\n');
-    [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+    [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
     [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
     % Load the results from the analysis.
@@ -308,7 +308,7 @@ switch part
 
     % Create overlapping segments with 50 SNPs.
     fprintf('Partitioning the genome into segments.\n');
-    [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+    [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
     [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
     % Determine which of the segments lie in the ("extended") MHC region.
@@ -1299,7 +1299,7 @@ switch part
 
   % Create overlapping segments with 50 SNPs.
   fprintf('Creating segments.\n');
-  [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+  [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
   [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
   % NULL HYPOTHESIS - NO ENRICHED PATHWAYS
@@ -1739,7 +1739,7 @@ switch part
 
   % Create overlapping segments with 50 SNPs.
   fprintf('Creating segments.\n');
-  [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+  [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
   [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
   % NULL HYPOTHESIS - NO ENRICHED PATHWAYS
@@ -2142,7 +2142,7 @@ switch part
 
   % Create overlapping segments with 50 SNPs.
   fprintf('Creating segments.\n');
-  [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+  [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
   [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
   % NULL HYPOTHESIS - NO ENRICHED PATHWAYS
@@ -2510,7 +2510,7 @@ switch part
 
   % Create overlapping segments with 50 SNPs.
   fprintf('Creating segments.\n');
-  [Aseg segchr segpos] = makesegments2(chr,pos,25,5e4);
+  [Aseg segchr segpos] = makesegments(chr,pos,25,5e4);
   [Aseg segchr segpos] = combinesegments(Aseg,segchr,segpos);
 
   % NULL HYPOTHESIS - NO ENRICHED PATHWAYS
