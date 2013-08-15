@@ -15,7 +15,24 @@ multi-marker models of disease to the data. We use Bayesian model
 averaging (BMA) to quantify support for enriched pathways, and to
 infer disease associations across the genome.
 
-*R implementations of these statistical procedures are forthcoming.*
+Accompanies upcoming PLoS Genetics paper.
+
+Explain that data cannot be made available to the public. Even if we
+were allowed to release the data, github would not permit us to store
+all the data because it would take up several Gb of space.
+
+Code was run in MATLAB 7.10 (R2010a). Has partially been run
+successfully in MATLAB 7.14 (R2012a). Has not been completely tested
+in more up-to-date versions of MATLAB.
+
+Requires varbvs code!
+
+Add MATLAB directory and all subdirectories to your MATLAB path using
+the addpath function in MATLAB.
+
+###What is included in this repository
+
+Give a quick outline of the files.
 
 ###License
 

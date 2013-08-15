@@ -1,6 +1,5 @@
-% This is a script to load the pathway databases into MATLAB.
-%
-% NOTE: this script only works in MATLAB 7.10 (R2010a).
+% This is a script to load the pathway databases into MATLAB. IMPORTANT
+% NOTE: this script is only known to run correctly in MATLAB 7.10 (R2010a).
 clear
 
 % The number of pathways from each database.

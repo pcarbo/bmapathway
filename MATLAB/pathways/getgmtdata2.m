@@ -1,4 +1,4 @@
-% GETGMTDATA(FILE,SYMBOLS,N,M,NA) imports pathway data from a file in Gene
+% GETGMTDATA2(FILE,SYMBOLS,N,M,NA) imports pathway data from a file in Gene
 % Matrix Transposed format (.gmt), in which genes are specified by their
 % gene symbol. FILE is the pathname. M is the number of pathways to read
 % (there is one pathway per line of the file). SYMBOLS is a Map object (see

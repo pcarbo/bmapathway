@@ -1,7 +1,8 @@
 % Creates the final case-control data sets for bipolar disorder (BD),
-% Crohn's disease (CD), rheumatoid arthritis and type 1 diabetes. Run this
-% script after running the GETWTCCCDATA script on the Wellcome Trust
-% case-control data.
+% coronary artery disease (CAD), Crohn's disease (CD), hypertension (HT),
+% rheumatoid arthritis (RA), type 1 diabetes (T1D) and type 2 diabetes
+% (T2D). Run this script after running the GETWTCCCDATA script on the
+% Wellcome Trust case-control data.
 %
 % For all seven diseases, I have an additional quality control step to
 % filter out potentially problematic SNPs. Some common SNPs (i.e. that have
@@ -25,8 +26,7 @@ nb = size(b.X,1);
 [X y labels chr pos minor major] = ...
     mergedata(a.X,zeros(na,1),a.labels,a.chr,a.pos,a.minor,a.major,...
 	      b.X,zeros(nb,1),b.labels,b.chr,b.pos,b.minor,b.major);
-save('wtccc_controls.mat',...
-     'X','labels','chr','pos','minor','major','-v7.3');
+save('wtccc_controls.mat','X','labels','chr','pos','minor','major','-v7.3');
 
 % BIPOLAR DISORDER.
 % I do not filter out any SNPs from the bipolar disorder data set.
@@ -43,8 +43,7 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('bd.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('bd.mat','X','y','labels','chr','pos','minor','major','-v7.3');
 
 % CORONARY ARTERY DISEASE.  
 % I filter out one SNP from the coronary artery disease data set: rs6553488
@@ -65,8 +64,7 @@ numctrls = size(ctrls.X,1);
 badsnp = 6553488;
 snps   = [ find(labels == badsnp) find(sum(X) < 1) ];
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('cad.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('cad.mat','X','y','labels','chr','pos','minor','major','-v7.3');
 
 % CROHN'S DISEASE.
 % Based on the quality control criterion, I filter out 2 additional SNPS in
@@ -89,8 +87,7 @@ badsnps    = [ 1914328 6601764 ];
 [ans snps] = intersect(labels,badsnps);
 snps       = [ snps find(sum(X) < 1) ];
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('cd.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('cd.mat','X','y','labels','chr','pos','minor','major','-v7.3');
 
 % HYPERTENSION.
 % I do not filter out any SNPs from the hypertension data set.
@@ -107,8 +104,7 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('ht.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('ht.mat','X','y','labels','chr','pos','minor','major','-v7.3');
 
 % RHEUMATOID ARTHRITIS
 % I do not filter out any SNPs from the rheumatoid arthritis data set.
@@ -125,8 +121,7 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('ra.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('ra.mat','X','y','labels','chr','pos','minor','major','-v7.3');
 
 % TYPE 1 DIABETES.
 % I do not filter out any SNPs from the type 1 diabetes data set.
@@ -143,8 +138,7 @@ numctrls = size(ctrls.X,1);
 	      ctrls.pos,ctrls.minor,ctrls.major);
 snps = find(sum(X) < 1);
 [X labels chr pos minor major] = removesnps(X,labels,chr,pos,minor,major,snps);
-save('t1d.mat','X','y','labels','chr','pos',...
-     'minor','major','-v7.3');
+save('t1d.mat','X','y','labels','chr','pos','minor','major','-v7.3');
 
 % TYPE 2 DIABETES.
 % I do not filter out any SNPs from the type 2 diabetes data set.
