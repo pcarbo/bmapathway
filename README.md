@@ -58,7 +58,7 @@ are a lot of files in these subfolders that define various MATLAB
 functions. Here we point out the most important folders and files, and
 explain when they might be useful.
 
-+ The [data](MATLAB/data) folder contains several functions and a
++ The **[data](MATLAB/data)** folder contains several functions and a
   script, [getwtcccdata.m](MATLAB/data/getwtcccdata.m), for acquiring
   and processing the genotype data, and for storing it in a convenient
   format for subsequent analysis steps. The genotype data was
@@ -69,9 +69,9 @@ explain when they might be useful.
   to be useful unless you have access to these files, or to the files
   from the original WTCCC analysis.
 
-+ Notes go here.
++ 
 
-+ Finally, the [misc](MATLAB/misc) folder contains several
++ Finally, the **[misc](MATLAB/misc)** folder contains several
   miscellaneous functions that are used by the other functions.
 
 ###Downloading and using the MATLAB code
