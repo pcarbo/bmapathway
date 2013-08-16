@@ -2,28 +2,31 @@ bmapathway
 ==========
 
 This repository contains [MATLAB](www.mathworks.com/products/matlab)
-source code and scripts implementing integrated analysis of genetic
-variants and pathways in genome-wide association studies (GWAS) of
-seven complex diseases: bipolar disorder (BD), coronary artery disease
+source code and scripts for integrated analysis of genetic variants
+and pathways in genome-wide association studies (GWAS) of seven
+complex diseases: bipolar disorder (BD), coronary artery disease
 (CAD), Crohn's disease (CD), hypertension (HT), rheumatoid arthritis
-(RA), type 1 diabetes (T1D) and type 2 diabetes (T2D). Running these
-MATLAB scripts should reproduce the results on enriched pathways and
-disease associations reported in the *PLoS Genetics* paper, **Integrated
-enrichment analysis of variants and pathways in genome-wide
-association studies indicates central role for IL-2 signaling genes in
-type 1 diabetes, and cytokine signaling genes in Crohn's disease.**
-For more details on our methods, consult the *PLoS Genetics* paper.
+(RA), type 1 diabetes (T1D) and type 2 diabetes (T2D). These data are
+from the Wellcome Trust Case-Control Consortium (WTCCC) studies,
+originally published in a
+[Nature paper](http://dx.doi.org/10.1038/nature05911) in 2007. Running
+these MATLAB scripts should reproduce the results given in the *PLoS
+Genetics* paper, **Integrated enrichment analysis of variants and
+pathways in genome-wide association studies indicates central role for
+IL-2 signaling genes in type 1 diabetes, and cytokine signaling genes
+in Crohn's disease.** For more details on these methods, consult the
+*PLoS Genetics* paper.
 
-Also included in this repository is MATLAB code implementing
-statistical procedures to (1) interrogate pathways for enrichment of
-disease associations in genome-wide data; and (2) map genetic variants
-associated with susceptibility with disease, and specifically it
-*prioritizes variants assigned to enriched pathways in an attempt to
-enhance discovery of genes underlying complex diseases.* These
-procedures are based on fitting multi-marker models of disease to the
-data. We use Bayesian model averaging (BMA) for large-scale
-multivariate regression to quantify support for models of enriched
-pathways, and to infer disease associations across the genome.
+This repository also contains MATLAB code implementing statistical
+procedures to (1) interrogate support for enrichment of disease
+associations in genome-wide data; and (2) map genetic variants
+associated with disease risk, including *prioritization of variants
+assigned to enriched gene sets, in an attempt to enhance discovery of
+genes underlying complex diseases.* These statistical procedures are
+based on fitting multi-marker models of disease to the data. We use
+Bayesian model averaging (BMA) in large-scale multivariate regression
+to quantify support for enrichment models, and to infer disease
+associations conditioned on these models.
 
 ###License
 
@@ -49,9 +52,27 @@ all the data because it would take up several Gb of space.
 
 ###Overview of the MATLAB code
 
-Text goes here.
+The [MATLAB](MATLAB) folder is organized into several subfolders, and
+all the MATLAB code (in .m files) is within these subfolders. There
+are a lot of files in these subfolders that define various MATLAB
+functions. Here we point out the most important folders and files, and
+explain when they might be useful.
 
-+ [filename](pathtofile) Decription of file goes here.
++ The [data](MATLAB/data) folder contains several functions and a
+  script, [getwtcccdata.m](MATLAB/data/getwtcccdata.m), for acquiring
+  and processing the genotype data, and for storing it in a convenient
+  format for subsequent analysis steps. The genotype data was
+  originally stored in files for use by the program
+  [BIMBAM](http://www.bcm.edu/cnrc/mcmcmc/index.cfm?pmid=18981), but
+  these files are not available here because they are large, and would
+  infringe on privacy needs. Therefore, these functions are unlikely
+  to be useful unless you have access to these files, or to the files
+  from the original WTCCC analysis.
+
++ Notes go here.
+
++ Finally, the [misc](MATLAB/misc) folder contains several
+  miscellaneous functions that are used by the other functions.
 
 ###Downloading and using the MATLAB code
 
