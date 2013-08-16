@@ -8,10 +8,11 @@ seven complex diseases: bipolar disorder (BD), coronary artery disease
 (CAD), Crohn's disease (CD), hypertension (HT), rheumatoid arthritis
 (RA), type 1 diabetes (T1D) and type 2 diabetes (T2D). Running these
 MATLAB scripts should reproduce the results on enriched pathways and
-disease associations reported in the PLoS Genetics paper, *Integrated
+disease associations reported in the *PLoS Genetics* paper, **Integrated
 enrichment analysis of variants and pathways in genome-wide
 association studies indicates central role for IL-2 signaling genes in
-type 1 diabetes, and cytokine signaling genes in Crohn's disease.*
+type 1 diabetes, and cytokine signaling genes in Crohn's disease.**
+For more details on our methods, consult the *PLoS Genetics* paper.
 
 Also included in this repository is MATLAB code implementing
 statistical procedures to (1) interrogate pathways for enrichment of
@@ -23,19 +24,6 @@ procedures are based on fitting multi-marker models of disease to the
 data. We use Bayesian model averaging (BMA) for large-scale
 multivariate regression to quantify support for models of enriched
 pathways, and to infer disease associations across the genome.
-
-Explain that data cannot be made available to the public. Even if we
-were allowed to release the data, github would not permit us to store
-all the data because it would take up several Gb of space.
-
-Code was run in MATLAB 7.10 (R2010a). Has partially been run
-successfully in MATLAB 7.14 (R2012a). Has not been completely tested
-in more up-to-date versions of MATLAB.
-
-Requires varbvs code!
-
-Add MATLAB directory and all subdirectories to your MATLAB path using
-the addpath function in MATLAB.
 
 ###License
 
@@ -53,11 +41,32 @@ will be useful, but **without any warranty**; without even the implied
 warranty of **merchantability** or **fitness for a particular
 purpose**. See [LICENSE](LICENSE) for more details.
 
-###Overview of the MATLAB source code
+###A note about the data
+
+Explain that data cannot be made available to the public. Even if we
+were allowed to release the data, github would not permit us to store
+all the data because it would take up several Gb of space.
+
+###Overview of the MATLAB code
 
 Text goes here.
 
 + [filename](pathtofile) Decription of file goes here.
+
+###Downloading and using the MATLAB code
+
+Explain how to download the code, either by downloading and unpacking
+the ZIP file, or cloning the repository from the command line.
+
+Add MATLAB directory and all subdirectories to your MATLAB path using
+the addpath function in MATLAB.
+
+You will need to download the functions implemented in the varbvs
+repository, and add these functions to your path.
+
+Code was run in MATLAB 7.10 (R2010a). Has partially been run
+successfully in MATLAB 7.14 (R2012a). Has not been completely tested
+in more up-to-date versions of MATLAB. Explain that 
 
 ###Credits
 
