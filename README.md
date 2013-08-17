@@ -11,7 +11,7 @@ Trust Case-Control Consortium (WTCCC) studies; the initial results of
 these studies were
 [published in Nature in 2007](http://dx.doi.org/10.1038/nature05911).
 
-Running these MATLAB scripts should reproduce the results in our *PLoS
+Running these MATLAB scripts should reproduce the results of our *PLoS
 Genetics* paper, **Integrated enrichment analysis of variants and
 pathways in genome-wide association studies indicates central role for
 IL-2 signaling genes in type 1 diabetes, and cytokine signaling genes
@@ -19,15 +19,15 @@ in Crohn's disease.** For more details on the methods used, consult
 the *PLoS Genetics* paper.
 
 This repository also contains MATLAB code implementing statistical
-procedures for (1) interrogating support for enrichment of disease
-associations in genome-wide data; and (2) mapping genetic variants
-associated with disease risk. Importantly, the mapping 
-**prioritizes variants assigned to enriched gene sets, in an attempt
-to enhance discovery of genes underlying complex diseases.** Our
-statistical procedures are based on fitting multi-marker models of
-disease to the data. We use Bayesian model averaging (BMA) in
-large-scale multivariate regression to quantify support for enrichment
-models, and to infer disease associations conditioned on these models.
+procedures to (1) interrogate support for enrichment of disease
+associations in genome-wide data; and (2) map genetic variants
+associated with disease risk. Importantly, the mapping **prioritizes
+variants assigned to enriched gene sets, in an attempt to enhance
+discovery of genes underlying complex diseases.** Our statistical
+procedures are based on fitting multi-marker models of disease to the
+data. We use Bayesian model averaging (BMA) in large-scale
+multivariate regression to quantify support for enrichment models, and
+to infer disease associations conditioned on these models.
 
 ###License
 
