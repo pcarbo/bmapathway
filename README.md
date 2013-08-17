@@ -3,30 +3,31 @@ bmapathway
 
 This repository contains [MATLAB](www.mathworks.com/products/matlab)
 source code and scripts for integrated analysis of genetic variants
-and pathways in genome-wide association studies (GWAS) of seven
-complex diseases: bipolar disorder (BD), coronary artery disease
-(CAD), Crohn's disease (CD), hypertension (HT), rheumatoid arthritis
-(RA), type 1 diabetes (T1D) and type 2 diabetes (T2D). These data are
-from the Wellcome Trust Case-Control Consortium (WTCCC) studies,
-originally published in a
-[Nature paper](http://dx.doi.org/10.1038/nature05911) in 2007. Running
-these MATLAB scripts should reproduce the results given in the *PLoS
-Genetics* paper, **Integrated enrichment analysis of variants and
-pathways in genome-wide association studies indicates central role for
-IL-2 signaling genes in type 1 diabetes, and cytokine signaling genes
-in Crohn's disease.** For more details on these methods, consult the
-*PLoS Genetics* paper.
+and pathways in genome-wide data sets for seven complex diseases:
+bipolar disorder (BD), coronary artery disease (CAD), Crohn's disease
+(CD), hypertension (HT), rheumatoid arthritis (RA), type 1 diabetes
+(T1D) and type 2 diabetes (T2D). These data sets are from the Wellcome
+Trust Case-Control Consortium (WTCCC) studies; the results of these
+studies were
+[published in Nature in 2007](http://dx.doi.org/10.1038/nature05911).
+
+Running these MATLAB scripts should reproduce the results presented in
+the *PLoS Genetics* paper, **Integrated enrichment analysis of
+variants and pathways in genome-wide association studies indicates
+central role for IL-2 signaling genes in type 1 diabetes, and cytokine
+signaling genes in Crohn's disease.** For more details on the methods
+used, consult the *PLoS Genetics* paper.
 
 This repository also contains MATLAB code implementing statistical
 procedures to (1) interrogate support for enrichment of disease
 associations in genome-wide data; and (2) map genetic variants
-associated with disease risk, including *prioritization of variants
-assigned to enriched gene sets, in an attempt to enhance discovery of
-genes underlying complex diseases.* These statistical procedures are
-based on fitting multi-marker models of disease to the data. We use
-Bayesian model averaging (BMA) in large-scale multivariate regression
-to quantify support for enrichment models, and to infer disease
-associations conditioned on these models.
+associated with disease risk. Importantly, the genome-wide mapping
+**prioritizes variants assigned to enriched gene sets, in an attempt
+to enhance discovery of genes underlying complex diseases.** Our
+statistical procedures are based on fitting multi-marker models of
+disease to the data. We use Bayesian model averaging (BMA) in
+large-scale multivariate regression to quantify support for enrichment
+models, and to infer disease associations conditioned on these models.
 
 ###License
 
@@ -57,11 +58,11 @@ based on this assembly.
 
 ###Overview of the MATLAB code
 
-The [MATLAB](MATLAB) folder is organized into several subfolders, and
-all the MATLAB code (in .m files) is within these subfolders. There
-are a lot of files in these subfolders that define various MATLAB
-functions. Here we point out the most important folders and files, and
-explain when they might be useful.
+The [MATLAB](MATLAB) folder is organized into several subfolders. All
+the MATLAB code (.m files) is found within these subfolders. There are
+many files in these subfolders defining various MATLAB functions used
+for our statistical methods. Here we point out the most important
+folders and files, and explain when they might be useful.
 
 + The **[analysis](MATLAB/analysis)** folder contains the main scripts
   that run all steps of the integrated analysis for the seven
