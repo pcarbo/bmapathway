@@ -7,21 +7,21 @@ and pathways in genome-wide data sets for seven complex diseases:
 bipolar disorder (BD), coronary artery disease (CAD), Crohn's disease
 (CD), hypertension (HT), rheumatoid arthritis (RA), type 1 diabetes
 (T1D) and type 2 diabetes (T2D). These data sets are from the Wellcome
-Trust Case-Control Consortium (WTCCC) studies; the results of these
-studies were
+Trust Case-Control Consortium (WTCCC) studies; the initial results of
+these studies were
 [published in Nature in 2007](http://dx.doi.org/10.1038/nature05911).
 
-Running these MATLAB scripts should reproduce the results presented in
-the *PLoS Genetics* paper, **Integrated enrichment analysis of
-variants and pathways in genome-wide association studies indicates
-central role for IL-2 signaling genes in type 1 diabetes, and cytokine
-signaling genes in Crohn's disease.** For more details on the methods
-used, consult the *PLoS Genetics* paper.
+Running these MATLAB scripts should reproduce the results in our *PLoS
+Genetics* paper, **Integrated enrichment analysis of variants and
+pathways in genome-wide association studies indicates central role for
+IL-2 signaling genes in type 1 diabetes, and cytokine signaling genes
+in Crohn's disease.** For more details on the methods used, consult
+the *PLoS Genetics* paper.
 
 This repository also contains MATLAB code implementing statistical
-procedures to (1) interrogate support for enrichment of disease
-associations in genome-wide data; and (2) map genetic variants
-associated with disease risk. Importantly, the genome-wide mapping
+procedures for (1) interrogating support for enrichment of disease
+associations in genome-wide data; and (2) mapping genetic variants
+associated with disease risk. Importantly, the mapping 
 **prioritizes variants assigned to enriched gene sets, in an attempt
 to enhance discovery of genes underlying complex diseases.** Our
 statistical procedures are based on fitting multi-marker models of
