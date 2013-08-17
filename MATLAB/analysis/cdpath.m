@@ -1,5 +1,5 @@
 % This script gives all the step I take in integrated analysis of variants
-% and pathways in the WTCCC study for bipolar disorder (BD).
+% and pathways in the WTCCC study for Crohn's disease (CD).
 clear
 
 % SCRIPT PARAMETERS.
