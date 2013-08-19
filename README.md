@@ -145,15 +145,15 @@ important folders and files, and explain when they might be useful.
   file contains gene set annotations for all 3160 candidate pathways
   included in our analyses.
 
-+ The **[mhc](MATLAB/mhc)** folder contains a couple functions used to
-  specify SNP annotations for the major histocompatibility complex
++ The **[mhc](MATLAB/mhc)** folder contains a couple functions that 
+  define SNP annotations for the major histocompatibility complex
   (MHC), and for the "extended" MHC.
 
 + The **[stats](MATLAB/stats)** folder contains a few functions that
-  output various statistical quantities used in the analysis.
+  output various statistical quantities used in our analyses.
 
 + Finally, the **[misc](MATLAB/misc)** folder contains several
-  miscellaneous subroutines used in other functions.
+  miscellaneous subroutines used by other functions.
 
 ###Downloading and using the MATLAB code
 
