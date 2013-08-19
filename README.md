@@ -117,7 +117,7 @@ important folders and files, and explain when they might be useful.
   **varpathbin2**. These variants are used for the modified analysis
   of the rheumatoid arthritis and type 1 diabetes data sets. These
   modifications are needed to account for the outsized contributions
-  of the major histocompatbility complex (MHC) to disease risk.
+  of the major histocompatibility complex (MHC) to disease risk.
 
 + The **[data](MATLAB/data)** folder contains several functions and a
   script, [getwtcccdata.m](MATLAB/data/getwtcccdata.m), for acquiring
@@ -146,8 +146,7 @@ important folders and files, and explain when they might be useful.
   included in our analyses.
 
 + The **[mhc](MATLAB/mhc)** folder contains a couple functions that 
-  define SNP annotations for the major histocompatibility complex
-  (MHC), and for the "extended" MHC.
+  define SNP annotations for the MHC and "extended" MHC.
 
 + The **[stats](MATLAB/stats)** folder contains a few functions that
   output various statistical quantities used in our analyses.
@@ -158,7 +157,7 @@ important folders and files, and explain when they might be useful.
 ###Downloading and using the MATLAB code
 
 As we explained above, it is not possible to reproduce our results
-from this repository alone; you must have access to the marker data
+from this repository alone; you must have access to the SNP data
 from the WTCCC studies. However, the MATLAB source code in this
 repository may still be useful to you if you would like to attempt an
 integrated analysis of pathways and genetic variants for your own study.
@@ -182,9 +181,10 @@ We ran all the code in this repository in MATLAB 7.10 (R2010a) on
 Linux machines. We also ran some of the code in a more recent MATLAB
 release, 7.14 (R2012a). We cannot guarantee that these functions will
 run correctly in the most current versions of MATLAB, or with
-operating systems other than Linux.
+operating systems other than Linux (though we have no reason at this
+point to expect that the code will not run successfully).
 
-Finally, we warn that running these MATLAB scripts can be extrememely
+Finally, we warn that running these MATLAB scripts can be extremely
 memory intensive for the sorts of genome-wide data sets we
 investigated. It may require a computer with more memory than is
 available in most conventional desktop computers; some of the steps of
