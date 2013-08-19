@@ -84,14 +84,41 @@ folders and files, and explain when they might be useful.
 + The **[analysis](MATLAB/analysis)** folder contains the main scripts
   that run all steps of the integrated analysis for the seven
   diseases, and a few other functions for loading structures used in
-  the analysis. All these scripts have several stages to the analysis,
-  and you need to generate the results of these stages in order to
-  complete the analysis. For example, the analysis of the Crohn's
-  disease data set takes 11 separate steps, which includes computation
-  of posterior quantities from the multi-marker model without
-  pathways, then later computes Bayes factors for pathways and
-  combinations of pathways, and this is all implemented in Stages A
-  through K in script [cdpath.m](MATLAB/analysis/cdpath.m).
+  the analysis. All these scripts have several stages to the analysis;
+  to complete the analysis, you will need to generate the results of
+  these stages in order. For example, the analysis of the Crohn's
+  disease data set takes 11 separate steps. This includes computation
+  of posterior quantities from the multi-marker model without pathways
+  (Stages A and B), compututation of Bayes factors for candidate
+  pathways retrieved from the online databases (Stages C and D), and
+  combinations of pathways (Stages E through J), and finally
+  computation some posterior quantities conditioned on some enrichment
+  models. All these steps are implemented in
+  [cdpath.m](MATLAB/analysis/cdpath.m).
+
++ The **[results](MATLAB/results)** folder contains several functions
+  and a script, [compileresults.m](MATLAB/results/compileresults.m),
+  that compiles results from the analysis for all seven diseases, and
+  generates tables and graphs for the *PLoS Genetics* paper.
+
++ MATLAB functions implementing our main statistical procedures to
+  interrogate pathways for enrichment and variants for correlation
+  with disease are stored in the **[multisnp](MATLAB/multisnp)**
+  folder. The function **multisnpbinhyper** runs the full variational
+  inference procedure for Bayesian variable selection in logistic
+  regression. It fits the multi-marker disease model to the data under
+  the null hypothesis that no pathways are enriched for disease
+  associations. Function **bayesfactorbin** computes the Bayes factor
+  for a given pathway annotation by fitting the multi-marker disease
+  model to the data under the hypothesis that the markers assigned to
+  the pathway are enriched for diseases associations. Function
+  **varpathbin** iterates computation of the Bayes factors for
+  multiple pathways (or combinations of pathways). We have implemented
+  variants to each of these procedures, **multisnpbinhyper2**,
+  **bayesfactorbin2** and **varpathbin2**. These variants are used for
+  the modified analysis of the rheumatoid arthritis and type 1
+  diabetes data sets to account for the large contributions of MHC
+  alleles to disease risk.
 
 + The **[data](MATLAB/data)** folder contains several functions and a
   script, [getwtcccdata.m](MATLAB/data/getwtcccdata.m), for acquiring
