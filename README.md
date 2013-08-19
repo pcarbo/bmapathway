@@ -53,27 +53,25 @@ information about gene sets retrieved from online pathway databases,
 such as [KEGG](http://www.genome.jp/kegg) and
 [Reactome](http://www.reactome.org). The [gene.mat](data/gene.mat)
 file gives information about how genes are annotated to the human
-genome (we use version 17 of the Human Genome Assembly, or NCBI Build
-35, because the data from the WTCCC disease studies are based on the
-same assembly).
+genome (we use version 17, or NCBI Build 35, of the Human Genome
+Assembly because the data from the WTCCC disease studies are also
+based on this assembly).
 
-However, we cannot make the full genotype data available to the public
-due to considerations about ensuring privacy of the study participants
-(even if we were allowed to release the data, space restrictions on
-github would prevent us from storing these files in the repository
-because they would take up several Gb). Instead, we provide
-"representative" files containing all information about the genetic
-markers (SNPs), except that the n-by-p genotype matrix (where n is the
-number of samples, and p is the number of SNPs) is replaced by an n x
-p sparse matrix, in which only a few columns of this matrix have
-nonzero entries. The nonzero entries correspond to minor allele counts
-at these SNPs, except that the rows have been permuted to preserve
-privacy. Thus, only the minor allele frequencies at these SNPs is the
-same in the actual data used in our analyses. For example, in
-[cd.mat](data/cd.mat) the 4686 x 442,001 matrix of genotypes for the
-Crohn's disease study is replaced by a sparse matrix of the same size,
-in which we have provided permuted genotypes in 10,000 of the 442,001
-columns.
+However, we cannot make the full genotype data available due to
+privacy considerations (even if we were allowed to release the data,
+space restrictions on github would prevent us from storing these files
+in the repository). Instead, we provide "representative" files
+containing all information about the genetic markers (single
+nucleotide polymorphisms, or SNPs), except that the n x p genotype
+matrix (where n is the number of samples, and p is the number of SNPs)
+is replaced by an n x p sparse matrix, in which only a few columns of
+this matrix have nonzero entries. The nonzero entries are minor allele
+counts at the SNPs, except that the rows have been permuted to
+preserve privacy. Thus, only minor allele frequencies at these SNPs
+are preserved. For example, in the Crohn's disease data set
+([cd.mat](data/cd.mat)) the 4686 x 442,001 matrix of genotypes is
+replaced by a sparse matrix of the same size, in which we have
+provided permuted genotypes for 10,000 of the 442,001 SNPs.
 
 ###Overview of the MATLAB code
 
