@@ -77,23 +77,24 @@ the same size, in which we have provided permuted genotypes for only
 The [MATLAB](MATLAB) folder is organized into several subfolders. All
 the MATLAB code (.m files) is found within these subfolders. There are
 many files in these subfolders defining various MATLAB functions used
-for our statistical methods. Here we point out the most important
-folders and files, and explain when they might be useful.
+for our statistical analysis procedures. Here we point out the most
+important folders and files, and explain when they might be useful.
 
 + The **[analysis](MATLAB/analysis)** folder contains the main scripts
   that run all steps of the integrated analysis for the seven
-  diseases, and a few other functions for loading structures used in
-  the analysis. All these scripts have several stages to the analysis;
-  to complete the analysis, you will need to generate the results of
-  these stages in order. For example, the analysis of the Crohn's
-  disease data set takes 11 separate steps. This includes computation
-  of posterior quantities from the multi-marker model without pathways
-  (Stages A and B), compututation of Bayes factors for candidate
-  pathways retrieved from the online databases (Stages C and D), and
-  combinations of pathways (Stages E through J), and finally
-  computation some posterior quantities conditioned on some enrichment
-  models. All these steps are implemented in
-  [cdpath.m](MATLAB/analysis/cdpath.m).
+  diseases, as well as a few other functions for loading structures
+  used in the analysis. All these scripts have several stages to the
+  analysis. To complete the analysis, you will need to generate the
+  results of each of these stages, in order. For example, the analysis
+  of the Crohn's disease data set takes 11 separate steps. This
+  includes computation of posterior quantities from the multi-marker
+  model without pathways (Stages A and B), compututation of Bayes
+  factors for candidate gene sets retrieved from online pathway
+  databases (Stages C and D), computation of Bayes factors for
+  combinations of enriched pathways (Stages E through J), and finally
+  computation of some posterior quantities conditioned on enrichment
+  models with the largest Bayes factors (Stage K). All of these steps
+  are implemented in the MATLAB script [cdpath.m](MATLAB/analysis/cdpath.m).
 
 + The **[results](MATLAB/results)** folder contains several functions
   and a script, [compileresults.m](MATLAB/results/compileresults.m),
