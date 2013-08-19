@@ -7,27 +7,27 @@ and pathways in genome-wide data sets for seven complex diseases:
 bipolar disorder (BD), coronary artery disease (CAD), Crohn's disease
 (CD), hypertension (HT), rheumatoid arthritis (RA), type 1 diabetes
 (T1D) and type 2 diabetes (T2D). These data sets are from the Wellcome
-Trust Case-Control Consortium (WTCCC) studies; the initial results of
+Trust Case-Control Consortium (WTCCC) studies (the initial results of
 these studies were
-[published in Nature in 2007](http://dx.doi.org/10.1038/nature05911).
+[published in Nature in 2007](http://dx.doi.org/10.1038/nature05911)).
 
-Running these MATLAB scripts should reproduce the results of our *PLoS
-Genetics* paper, **Integrated enrichment analysis of variants and
+Running the MATLAB scripts should reproduce the results of our *PLoS
+Genetics* paper, **"Integrated enrichment analysis of variants and
 pathways in genome-wide association studies indicates central role for
 IL-2 signaling genes in type 1 diabetes, and cytokine signaling genes
-in Crohn's disease.** For more details on the methods used, consult
-the *PLoS Genetics* paper.
+in Crohn's disease."** For more details on the methods used, please
+consult the *PLoS Genetics* paper.
 
 This repository also contains MATLAB code implementing statistical
 procedures to (1) interrogate support for enrichment of disease
 associations in genome-wide data; and (2) map genetic variants
-associated with disease risk. Importantly, the mapping **prioritizes
-variants assigned to enriched gene sets, in an attempt to enhance
-discovery of genes underlying complex diseases.** Our statistical
-procedures are based on fitting multi-marker models of disease to the
-data. We use Bayesian model averaging (BMA) in large-scale
-multivariate regression to quantify support for enrichment models, and
-to infer disease associations conditioned on these models.
+associated with disease risk. The mapping **prioritizes variants
+assigned to enriched gene sets, in an attempt to enhance discovery of
+genes underlying complex diseases.** Our statistical procedures are
+based on fitting multi-marker models of disease to the data. We use
+Bayesian model averaging (BMA) in large-scale multivariate regression
+to quantify support for enrichment models, and to infer disease
+associations conditioned on these models.
 
 ###License
 
@@ -45,16 +45,23 @@ will be useful, but **without any warranty**; without even the implied
 warranty of **merchantability** or **fitness for a particular
 purpose**. See [LICENSE](LICENSE) for more details.
 
-###A note about the data
+###Note about the data
 
-Explain that data cannot be made available to the public. Even if we
-were allowed to release the data, github would not permit us to store
-all the data because it would take up several Gb of space.
+Inside the [data](data) folder are several files containing pathway,
+gene and genetic data for the analyses. The
+[pathway.mat](data/pathway.mat) files has all the details about the
+pathway gene sets retrieved from several online pathway databases,
+including [KEGG](http://www.genome.jp/kegg) and
+[Reactome](http://www.reactome.org), and [gene.mat](data/gene.mat)
+gives information about how genes are annotated to human genome assembly (we
+use version 17 of the assembly, or NCBI Build 35, because the data
+from the disease studies are based on the same assembly).
 
-Additional files giving gene and pathway information. Mention that
-gene information is based on Human Genome Assembly 17 (NCBI Build 35)
-because the SNP data from the WTCCC case-control disease studies are
-based on this assembly.
+However, we cannot make the full genotype data available to the public
+due to considerations about ensuring privacy of the study participants
+(even if we were allowed to release the data, space restrictions on
+github would prevent us from storing these files in the repository,
+because they would take up several Gb).
 
 ###Overview of the MATLAB code
 
