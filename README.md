@@ -48,30 +48,29 @@ purpose**. See [LICENSE](LICENSE) for more details.
 
 ###Note about the data
 
-The data used in the analyses is stored in the [data](data) folder:
-the [pathway.mat](data/pathway.mat) file has information about gene
-sets retrieved from online pathway databases, such as
-[KEGG](http://www.genome.jp/kegg) and
-[Reactome](http://www.reactome.org); the [gene.mat](data/gene.mat)
-file stores information about how genes are annotated to the human
-genome (note that we use version 17, or NCBI Build 35, of the Human
-Genome Assembly because the data from the WTCCC disease studies are
-also based on this assembly). However, we cannot make the full
-genotype data available due to privacy considerations; even if we were
-allowed to release these data, space restrictions on github would
-prevent us from storing these files in the repository. Instead, we
-provide "representative" files containing information about the
-genetic markers (these markers are single nucleotide polymorphisms, or
-SNPs), except that the n x p genotype matrix (where n is the number of
-samples, and p is the number of SNPs) is replaced by an n x p sparse
-matrix, in which only a few columns of this matrix have nonzero
-entries. The nonzero entries are minor allele counts at the SNPs, in
-which the rows have been permuted to preserve privacy. Thus, only
-minor allele frequencies at these SNPs are preserved in the data we
-have made available in this repository. For example, in the Crohn's
-disease data set ([cd.mat](data/cd.mat)) the 4686 x 442,001 matrix of
-genotypes is replaced by a sparse matrix of the same size, in which we
-have provided permuted genotypes for only 10,000 of the 442,001 SNPs.
+The data used in the analyses are stored in the [data](data) folder:
+[pathway.mat](data/pathway.mat) stores gene sets retrieved from online
+pathway databases, such as [KEGG](http://www.genome.jp/kegg) and
+[Reactome](http://www.reactome.org); [gene.mat](data/gene.mat) stores
+information about how genes are annotated to the human genome (note
+that we use version 17, or NCBI Build 35, of the Human Genome Assembly
+because the data from the WTCCC disease studies are also based on this
+assembly). However, we cannot make the full genotype data available
+due to privacy considerations; even if we were allowed to release
+these data, space restrictions on github would prevent us from storing
+these files in the repository. Instead, we provide "representative"
+files containing information about the genetic markers (these markers
+are single nucleotide polymorphisms, or SNPs), except that the n x p
+genotype matrix (where n is the number of samples, and p is the number
+of SNPs) is replaced by an n x p sparse matrix, in which only a few
+columns of this matrix have nonzero entries. The nonzero entries are
+minor allele counts at the SNPs, in which the rows have been permuted
+to preserve privacy. Thus, only the minor allele frequency of each of
+these SNPs is preserved in the data we have made available. For
+example, in the Crohn's disease data set, [cd.mat](data/cd.mat), the
+4686 x 442,001 matrix of genotypes is replaced by a sparse matrix of
+the same size, in which we have provided permuted genotypes for only
+10,000 of the 442,001 SNPs.
 
 ###Overview of the MATLAB code
 
