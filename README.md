@@ -11,23 +11,24 @@ Trust Case-Control Consortium (WTCCC) studies (the initial results of
 these studies were
 [published in Nature in 2007](http://dx.doi.org/10.1038/nature05911)).
 
-Running the MATLAB scripts should reproduce the results of our *PLoS
-Genetics* paper, **"Integrated enrichment analysis of variants and
-pathways in genome-wide association studies indicates central role for
-IL-2 signaling genes in type 1 diabetes, and cytokine signaling genes
-in Crohn's disease."** For more details on the methods used, please
+Running the MATLAB scripts in the [MATLAB/analysis](MATLAB/analysis)
+folder should reproduce the results of our *PLoS Genetics* paper,
+**"Integrated enrichment analysis of variants and pathways in
+genome-wide association studies indicates central role for IL-2
+signaling genes in type 1 diabetes, and cytokine signaling genes in
+Crohn's disease."** For more details on the methods used, please
 consult the *PLoS Genetics* paper.
 
 This repository also contains MATLAB code implementing statistical
 procedures to (1) interrogate support for enrichment of disease
 associations in genome-wide data; and (2) map genetic variants
-associated with disease risk. The mapping **prioritizes variants
-assigned to enriched gene sets, in an attempt to enhance discovery of
-genes underlying complex diseases.** Our statistical procedures are
-based on fitting multi-marker models of disease to the data. We use
-Bayesian model averaging (BMA) in large-scale multivariate regression
-to quantify support for enrichment models, and to infer disease
-associations conditioned on these models.
+associated with disease risk. The mapping **prioritizes genetic
+variants assigned to enriched gene sets, in an attempt to enhance
+discovery of genes underlying complex diseases.** Our statistical
+procedures are based on fitting multi-marker models of disease to the
+data. We use Bayesian model averaging (BMA) in large-scale
+multivariate regression to quantify support for enrichment models, and
+to infer disease associations conditioned on these models.
 
 ###License
 
@@ -47,28 +48,26 @@ purpose**. See [LICENSE](LICENSE) for more details.
 
 ###Note about the data
 
-Inside the [data](data) folder are several MATLAB files containing
-data for the analyses. The [pathway.mat](data/pathway.mat) file has
-information about gene sets retrieved from online pathway databases,
-such as [KEGG](http://www.genome.jp/kegg) and
-[Reactome](http://www.reactome.org). The [gene.mat](data/gene.mat)
+The data used in the analyses is stored in the [data](data) folder:
+the [pathway.mat](data/pathway.mat) file has information about gene
+sets retrieved from online pathway databases, such as
+[KEGG](http://www.genome.jp/kegg) and
+[Reactome](http://www.reactome.org); the [gene.mat](data/gene.mat)
 file gives information about how genes are annotated to the human
 genome (we use version 17, or NCBI Build 35, of the Human Genome
 Assembly because the data from the WTCCC disease studies are also
-based on this assembly).
-
-However, we cannot make the full genotype data available due to
-privacy considerations (even if we were allowed to release the data,
-space restrictions on github would prevent us from storing these files
-in the repository). Instead, we provide "representative" files
-containing all information about the genetic markers (single
-nucleotide polymorphisms, or SNPs), except that the n x p genotype
-matrix (where n is the number of samples, and p is the number of SNPs)
-is replaced by an n x p sparse matrix, in which only a few columns of
-this matrix have nonzero entries. The nonzero entries are minor allele
-counts at the SNPs, except that the rows have been permuted to
-preserve privacy. Thus, only minor allele frequencies at these SNPs
-are preserved. For example, in the Crohn's disease data set
+based on this assembly). However, we cannot make the full genotype
+data available due to privacy considerations (even if we were allowed
+to release the data, space restrictions on github would prevent us
+from storing these files in the repository). Instead, we provide
+"representative" files containing all information about the genetic
+markers (single nucleotide polymorphisms, or SNPs), except that the n
+x p genotype matrix (where n is the number of samples, and p is the
+number of SNPs) is replaced by an n x p sparse matrix, in which only a
+few columns of this matrix have nonzero entries. The nonzero entries
+are minor allele counts at the SNPs, except that the rows have been
+permuted to preserve privacy. Thus, only minor allele frequencies at
+these SNPs are preserved. For example, in the Crohn's disease data set
 ([cd.mat](data/cd.mat)) the 4686 x 442,001 matrix of genotypes is
 replaced by a sparse matrix of the same size, in which we have
 provided permuted genotypes for 10,000 of the 442,001 SNPs.
