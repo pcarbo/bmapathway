@@ -47,15 +47,15 @@ purpose**. See [LICENSE](LICENSE) for more details.
 
 ###Note about the data
 
-Inside the [data](data) folder are several files containing pathway,
-gene and genetic data for the analyses. The
-[pathway.mat](data/pathway.mat) files has all the details about the
-pathway gene sets retrieved from several online pathway databases,
-including [KEGG](http://www.genome.jp/kegg) and
-[Reactome](http://www.reactome.org), and [gene.mat](data/gene.mat)
-gives information about how genes are annotated to human genome assembly (we
-use version 17 of the assembly, or NCBI Build 35, because the data
-from the disease studies are based on the same assembly).
+Inside the [data](data) foflder are several MATLAB files containing
+data for the analyses on pathway, gene and genetic variation. The
+[pathway.mat](data/pathway.mat) file has information about gene sets
+retrieved from online pathway databases, including
+[KEGG](http://www.genome.jp/kegg) and
+[Reactome](http://www.reactome.org); [gene.mat](data/gene.mat) gives
+information about how genes are annotated to the human genome (we use
+version 17 of the Human Genome Assembly, or NCBI Build 35, because the
+data from the WTCCC disease studies are based on the same assembly).
 
 However, we cannot make the full genotype data available to the public
 due to considerations about ensuring privacy of the study participants
