@@ -116,8 +116,8 @@ important folders and files, and explain when they might be useful.
   **multisnpbinhyper2**, **bayesfactorbin2** and
   **varpathbin2**. These variants are used for the modified analysis
   of the rheumatoid arthritis and type 1 diabetes data sets. These
-  modifications are needed to account for the large contributions of
-  MHC alleles to disease risk.
+  modifications are needed to account for the outsized contributions
+  of the major histocompatbility complex (MHC) to disease risk.
 
 + The **[data](MATLAB/data)** folder contains several functions and a
   script, [getwtcccdata.m](MATLAB/data/getwtcccdata.m), for acquiring
@@ -126,9 +126,9 @@ important folders and files, and explain when they might be useful.
   originally stored in files for use by the program
   [BIMBAM](http://www.bcm.edu/cnrc/mcmcmc/index.cfm?pmid=18981), but
   these files are not available here because they are large, and would
-  infringe on privacy needs. Therefore, these functions are unlikely
-  to be useful unless you have access to these files, or to the files
-  from the original WTCCC analysis.
+  infringe on privacy of study participants. Therefore, the functions
+  in this folder are unlikely to be useful unless you have access to
+  the BIMBAM files, or to the files from the original WTCCC study.
 
 + Inside the **[genes](MATLAB/genes)** folder are functions and a
   script, [getgenedata.m](MATLAB/genes/getgenedata.m), for reading
