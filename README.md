@@ -157,18 +157,38 @@ important folders and files, and explain when they might be useful.
 
 ###Downloading and using the MATLAB code
 
-Explain how to download the code, either by downloading and unpacking
-the ZIP file, or cloning the repository from the command line.
+As we explained, it is not possible to reproduce the results of our
+analysis unless you have access to the data from the WTCCC
+studies. However, the MATLAB source code in this repository may still
+be useful to you if you would like to attempt an integrated analysis
+of enriched pathways for your own study.
 
-Add MATLAB directory and all subdirectories to your MATLAB path using
-the addpath function in MATLAB.
+To use the code, the first step is to copy the files to your
+computer. This can be done either by downloading and unpacking the
+[ZIP file](https://github.com/pcarbo/bmapathway/archive/master.zip),
+or by cloning the repository from the command line (assuming you have
+git installed on your computer):
 
-You will need to download the functions implemented in the varbvs
-repository, and add these functions to your path.
+    git clone git@github.com:pcarbo/bmapathway.git
 
-Code was run in MATLAB 7.10 (R2010a). Has partially been run
-successfully in MATLAB 7.14 (R2012a). Has not been completely tested
-in more up-to-date versions of MATLAB. Explain that 
+To use the MATLAB functions, you will probably need to add the
+subdirectories to your path using the ADDPATH command in MATLAB.
+
+You will also need to download the MATLAB functions implemented in the
+[varbvs](https://github.com/pcarbo/varbvs) repository, and follow the
+instructions in that repository for how to build the MEX files.
+
+All the code in this repository was extensively tested in MATLAB 7.10
+(R2010a) on Linux machines. It has also been partially used in a more
+recent version of MATLAB, 7.14 (R2012a), but we cannot guarantee that
+these functions will run correctly in the most current versions of
+MATLAB, or using operating systems other than Linux.
+
+We also caution that running the MATLAB scripts can be extrememely
+memory intensive for the sorts of genome-wide data sets we
+investigated, and may require machines with more memory than are
+available in most conventional desktop computers; some of the steps of
+our analyses required as much as 20 Gb of RAM.
 
 ###Credits
 
