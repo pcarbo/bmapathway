@@ -146,15 +146,14 @@ important folders and files, and explain when they might be useful.
   included in our analyses.
 
 + The **[mhc](MATLAB/mhc)** folder contains a couple functions used to
-  specify the annotations corresponding to the major
-  histocompatibility complex (MHC) and the "extended" MHC.
+  specify SNP annotations for the major histocompatibility complex
+  (MHC), and for the "extended" MHC.
 
 + The **[stats](MATLAB/stats)** folder contains a few functions that
-  calculate various statistical quantities that are useful for the
-  analysis.
+  output various statistical quantities used in the analysis.
 
 + Finally, the **[misc](MATLAB/misc)** folder contains several
-  miscellaneous functions that are used by the other functions.
+  miscellaneous subroutines used in other functions.
 
 ###Downloading and using the MATLAB code
 
