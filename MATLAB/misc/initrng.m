@@ -6,6 +6,5 @@ function initrng (seed)
 
   % Here, 'mt19937ar' refers to the Mersenne Twister, which is the default
   % random number generator in MATLAB 7.14.
-  warning('off','MATLAB:RandStream:SetDefaultStream');
   s = RandStream('mt19937ar','Seed',seed);
-  RandStream.setDefaultStream(s);
+  RandStream.setGlobalStream(s);
