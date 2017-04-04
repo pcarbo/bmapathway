@@ -30,7 +30,7 @@ data. We use Bayesian model averaging (BMA) in large-scale
 multivariate regression to quantify support for enrichment models, and
 to infer disease associations conditioned on these models.
 
-###License
+### License
 
 Copyright (c) 2013, Peter Carbonetto.
 
@@ -46,7 +46,7 @@ will be useful, but **without any warranty**; without even the implied
 warranty of **merchantability** or **fitness for a particular
 purpose**. See [LICENSE](LICENSE) for more details.
 
-###Note about the data
+### Note about the data
 
 The data used in the analyses are stored in the [data](data) folder:
 [pathway.mat](data/pathway.mat) stores gene sets retrieved from online
@@ -72,7 +72,7 @@ example, in the Crohn's disease data set, [cd.mat](data/cd.mat), the
 the same size, in which we have provided permuted genotypes for only
 10,000 of the 442,001 SNPs.
 
-###Overview of the MATLAB code
+### Overview of the MATLAB code
 
 The [MATLAB](MATLAB) folder is organized into several subfolders. All
 the MATLAB code (.m files) is found within these subfolders. There are
@@ -154,7 +154,7 @@ important folders and files, and explain when they might be useful.
 + Finally, the **[misc](MATLAB/misc)** folder contains several
   miscellaneous subroutines used by other functions.
 
-###Downloading and using the MATLAB code
+### Downloading and using the MATLAB code
 
 As we explained above, it is not possible to reproduce our results
 from this repository alone; you must have access to the SNP data
@@ -190,7 +190,7 @@ investigated. It may require a computer with more memory than is
 available in most conventional desktop computers; some of the steps of
 our analysis required as much as 20 Gb of RAM.
 
-###Credits
+### Credits
 
 All MATLAB source code contained in this repository was developed by:<br>
 [Peter Carbonetto](http://www.cs.ubc.ca/spider/pcarbo)<br>
